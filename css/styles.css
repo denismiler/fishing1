@@ -1,0 +1,200 @@
+/* Custom Styles for Fishing in Dobrohostiv Website */
+
+:root {
+  --primary: #198754;
+  --primary-dark: #146c43;
+  --secondary: #6c757d;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --body-color: #212529;
+  --body-bg: #fff;
+  --font-family-sans-serif: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* General Styles */
+body {
+  font-family: var(--font-family-sans-serif);
+  color: var(--body-color);
+  background-color: var(--body-bg);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+.section-title {
+  position: relative;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--primary);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Navbar Styles */
+.navbar {
+  transition: all 0.5s;
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.navbar .nav-link {
+  padding: 0.5rem 1rem !important;
+  position: relative;
+}
+
+.navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8)), url('https://images.pexels.com/photos/1687845/pexels-photo-1687845.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* About Section */
+.about-section .card {
+  transition: all 0.3s ease;
+}
+
+.about-section .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Fish Types Section */
+.fish-card {
+  transition: all 0.3s ease;
+}
+
+.fish-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.fish-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgba(25, 135, 84, 0.1);
+}
+
+/* Gallery Section */
+.gallery-img {
+  transition: all 0.3s ease;
+  height: 250px;
+  object-fit: cover;
+}
+
+.gallery-img:hover {
+  transform: scale(1.02);
+}
+
+/* Booking Section */
+.booking-section {
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8)), url('https://images.pexels.com/photos/534164/pexels-photo-534164.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.booking-section .form-control:focus,
+.booking-section .form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+}
+
+/* Contacts Section */
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: rgba(25, 135, 84, 0.1);
+}
+
+/* Footer */
+.footer a {
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.footer a:hover {
+  color: var(--primary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+section {
+  animation: fadeIn 1s ease-out;
+}
+
+.card, .hero-section h1, .hero-section p, .hero-section .btn {
+  animation: slideUp 0.8s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-section {
+    background-attachment: scroll;
+  }
+  
+  .booking-section {
+    background-attachment: scroll;
+  }
+}
